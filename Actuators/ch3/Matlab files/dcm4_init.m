@@ -1,0 +1,23 @@
+function [dcm, cont] = dcm4_init()
+% [dcm, control]=dcm4_init: 
+% is called before the simulation dcm4.slx starts
+dcm.T_A=10e-3;
+dcm.r_A=0.04;
+dcm.r_f=1;
+dcm.T_f=0.2;
+dcm.Pfi_f0=1;
+% dcm.Phi_f=[0 1.00];
+% dcm.i_f=  [0 1.00];
+dcm.Phi_f=[0 0.14 0.27 0.40 0.54 0.66 0.76 0.84 0.90 0.95 1.00 1.03 1.06];
+dcm.i_f=  [0 0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 0.90 1.00 1.10 1.20];
+dcm.Om_m0=0;
+dcm.T_J=0.8;
+time=[0 0.5 2];
+u_fn=[1 0.37 0.37];
+dcm.u_fn=[time',u_fn'];
+cont.Om.K=20;
+cont.Om.TN=0.1;
+cont.i_Anmax=1.5;
+cont.iA.K=0.5;
+cont.iA.TN=0.01;
+cont.u_Anmax=1.1;
